@@ -1,0 +1,8 @@
+# Dirs
+.vscode/
+__pycache__/
+venv/
+
+# Files
+.DS_Store
+*.py[cod]
