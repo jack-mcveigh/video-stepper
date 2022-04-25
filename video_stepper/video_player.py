@@ -18,7 +18,10 @@ class VideoPlayer:
     def play(self):
         while True:
             for video in self.video_queue():
-                self.__play_video(os.path.join(self.video_path, video))
+                self.__play_video(
+                    video=os.path.join(self.video_path, video),
+                    fps=self.fps
+                )
 
             if not self.loop:
                 break
