@@ -10,11 +10,12 @@ def main() -> None:
         print('Usage: main.py [ PLAYLIST.json | PLAYLIST.csv ]')
         return
 
-    playlist_file = sys.argv[0]
+    playlist_file = sys.argv[1]
     playlist_path = os.path.abspath(os.path.dirname(__file__))
 
     pfp = PlaylistFileParser(playlist_file)
     playlist = pfp.parse()
+    pfp.validate_files_in(playlist)
 
     vp = VideoPlayer(playlist, playlist_path)
     vp.play()

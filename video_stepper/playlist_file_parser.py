@@ -30,6 +30,15 @@ class PlaylistFileParser:
             data = csv_data.readlines()
         return self.__format_csv_data(data)
 
+    def validate_files_in(self, playlist: List[str]):
+        video_path = os.path.abspath(os.path.dirname(self.file_path))
+        video_path_contents = os.listdir(video_path)
+        for video in playlist:
+            if video not in video_path_contents:
+                raise FileNotFoundError(
+                    f'The required playlist entry "{video}" is missing'
+                )
+
     @staticmethod
     def __format_csv_data(data: List[str]) -> List[str]:
         return [line.split(',')[0] for line in data[1:]]
