@@ -19,7 +19,7 @@ def parse_args():
     parser.add_argument(
         '-f', '--fps',
         dest='fps',
-        type=int,
+        type=float,
         help='Change the fps of video playback'
     )
     parser.add_argument(
