@@ -40,7 +40,7 @@ class VideoPlayer:
 
         cap = cv2.VideoCapture(video)
         if not cap.isOpened():
-            raise Exception('Unable to video file.')
+            raise FileNotFoundError(f'Unable to open "{video}"')
 
         while(cap.isOpened()):
             ret, frame = cap.read()
