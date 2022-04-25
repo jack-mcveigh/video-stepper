@@ -1,8 +1,8 @@
 import os
 import sys
 
-from playlist_file_parser import PlaylistFileParser
-from video_player import VideoPlayer
+from .playlist_file_parser import PlaylistFileParser
+from .video_player import VideoPlayer
 
 
 def main() -> None:

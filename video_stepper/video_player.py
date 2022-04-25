@@ -3,7 +3,7 @@ import cv2
 import random
 from typing import List
 
-from config import FRAME_HEIGHT, FRAME_WIDTH
+from .config import FRAME_HEIGHT, FRAME_WIDTH
 
 
 class VideoPlayer:
