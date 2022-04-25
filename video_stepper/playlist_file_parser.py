@@ -4,10 +4,10 @@ from typing import List
 
 
 class PlaylistFileParser:
-    def __init__(self, file: str):
-        self.file = file
+    def __init__(self, file_path: str):
+        self.file_path = file_path
 
-        ext = os.path.splitext(self.file)[-1]
+        ext = os.path.splitext(self.file_path)[-1]
         if ext == '.json':
             self.parse = self.__parse_json
         elif ext == '.csv':
@@ -21,12 +21,12 @@ class PlaylistFileParser:
         pass
 
     def __parse_json(self) -> List[str]:
-        with open(self.file, 'r') as json_data:
+        with open(self.file_path, 'r') as json_data:
             data = json.load(json_data)
         return data['data']
 
     def __parse_csv(self) -> List[str]:
-        with open(self.file, 'r') as csv_data:
+        with open(self.file_path, 'r') as csv_data:
             data = csv_data.readlines()
         return self.__format_csv_data(data)
 
