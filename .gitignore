@@ -2,6 +2,9 @@
 .vscode/
 __pycache__/
 venv/
+build/
+video_stepper.egg-info/
+dist/
 
 # Files
 .DS_Store
