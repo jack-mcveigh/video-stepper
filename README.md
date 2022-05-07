@@ -24,7 +24,8 @@ To install, run the following:
 ```bash
 git clone https://github.com/jmcveigh55/video-stepper.git
 cd video-stepper
-python3 setup.py install
+source venv/bin/activate
+pip3 install .
 ```
 
 ## Use
@@ -32,12 +33,14 @@ python3 setup.py install
 
 * To play a video:
 >```bash
->video-stepper video.mp4
+>source venv/bin/activate
+>video-stepper video.mp4 &
 >```
 
 * To play a video with custom framerate:
 >```bash
->video-stepper video.mp4 -f 0.25
+>source venv/bin/activate
+>video-stepper video.mp4 -f 0.25 &
 >```
 
 * To play a playlist:
@@ -61,16 +64,19 @@ python3 setup.py install
 >```
 > Run the following:
 >```bash
->video-stepper -p playlist.json
+>source venv/bin/activate
+>video-stepper -p playlist.json &
 >```
 >or
 >```bash
->video-stepper -p playlist.json
+>source venv/bin/activate
+>video-stepper -p playlist.json &
 >```
 
 * To loop indefinitely when using a playlist:
 >```bash
->video-stepper -p playlist.json -l
+>source venv/bin/activate
+>video-stepper -p playlist.json -l &
 >```
 
 * To shuffle a playlist (When used with looping, playlist is shuffled each iteration):

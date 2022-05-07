@@ -1,7 +1,6 @@
 from os import path
 
 BASE_PATH = path.abspath(path.dirname(path.dirname(path.dirname(__file__))))
-DATA_PATH = path.join(BASE_PATH, 'data')
 LOG_PATH = path.join(BASE_PATH, 'log')
 
 FRAME_WIDTH = 640
